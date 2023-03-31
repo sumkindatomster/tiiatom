@@ -50,6 +50,7 @@ function css(done) {
         postcss([
             easyimport,
             colorFunction(),
+            tailwind(),
             autoprefixer(),
             cssnano()
         ]),

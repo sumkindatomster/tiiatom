@@ -11,11 +11,11 @@ module.exports = {
                 "winter-green": "#64947e",
                 "nectar-orange": "#f5cca3",
             },
-            fontFamily: {
+            /*fontFamily: {
                 sans: ["MavenPro", ...defaultTheme.fontFamily.sans],
                 serif: ["Rokkitt", ...defaultTheme.fontFamily.serif],
                 display: ["Oranienbaum", ...defaultTheme.fontFamily.serif],
-            },
+            },*/
         },
     },
     plugins: [require("@tailwindcss/typography")],

@@ -1,0 +1,18 @@
+routes:
+
+collections:
+  /fi/:
+    permalink: /fi/{slug}/
+    template: index
+    filter: tag:hash-fi
+  /sv/:
+    permalink: /sv/{slug}/
+    template: index
+    filter: tag:hash-sv
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

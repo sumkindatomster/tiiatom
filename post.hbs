@@ -5,6 +5,11 @@ into the {body} tag of the default.hbs template --}}
 
 
 {{#post}}
+  {{#has tag="#fi"}}
+    {{#contentFor "lang"}}fi{{/contentFor}}
+  {{else}}
+    {{#contentFor "lang"}}sv{{/contentFor}}
+  {{/has}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
 <main id="site-main" class="site-main">
@@ -49,7 +54,7 @@ into the {body} tag of the default.hbs template --}}
             <div class="article-byline-meta">
                 <h4 class="author-name">{{authors}}</h4>
                 <div class="byline-meta-content">
-                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{#has tag="#fi"}}{{date locale="fi-fi"}}{{else}}{{date locale="sv-sv"}}{{/has}}</time>
                     {{#if reading_time}}
                         <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
                     {{/if}}
@@ -86,33 +91,8 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    {{#if comments}}
-        <section class="article-comments gh-canvas">
-            {{comments}}
-        </section>
-    {{/if}}
-
 </article>
 </main>
-
-{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#if @site.members_enabled}}
-{{#unless @member}}
-{{#unless @site.comments_enabled}}
-{{#if access}}
-    <section class="footer-cta outer">
-        <div class="inner">
-            {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
-            <a class="footer-cta-button" href="#/portal" data-portal>
-                <div class="footer-cta-input">Enter your email</div>
-                <span>Subscribe</span>
-            </a>
-        </div>
-    </section>
-{{/if}}
-{{/unless}}
-{{/unless}}
-{{/if}}
 
 
 {{!-- Read more links, just above the footer --}}
@@ -122,11 +102,12 @@ into the {body} tag of the default.hbs template --}}
 
     This query gets the latest 3 posts on the site, but adds a filter to
     exclude the post we're currently on from being included. --}}
-    {{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
+    {{#get "posts" filter="tag:{{tags.[0].slug}}+id:-{{id}}" limit="3" visibility="all" as |more_posts|}}
 
         {{#if more_posts}}
             <aside class="read-more-wrap outer">
                 <div class="read-more inner">
+                    <p>{{ t "Latest Posts"}}</p>
                     {{#foreach more_posts}}
                         {{> "post-card"}}
                     {{/foreach}}
