@@ -28,6 +28,14 @@ production stylesheet in assets/built/screen.css
 /* Import CSS reset and base styles */
 @import "global.css";
 
+
+
+@font-face {
+    font-family: "Annabelle";
+    src: url("../fonts/Annabelle\ JF\ Regular.ttf");
+}
+
+
 :root {
 
     /* Colours */
@@ -2482,8 +2490,3 @@ html.dark-mode .footer-cta-title {
         }
     }
 }
-
-/* Tailwind CSS */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";

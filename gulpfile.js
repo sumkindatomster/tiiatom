@@ -12,7 +12,6 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
 const fs = require('fs');
-const tailwind = require('tailwindcss');
 
 // postcss plugins
 const autoprefixer = require('autoprefixer');
@@ -51,7 +50,6 @@ function css(done) {
         postcss([
             easyimport,
             colorFunction(),
-            tailwind(),
             autoprefixer(),
             cssnano()
         ]),
