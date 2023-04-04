@@ -1,5 +1,13 @@
+{{#is "home"}}
 <ul class="nav">
     {{#foreach navigation}}
     <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="{{url}}">{{label}}</a></li>
     {{/foreach}}
 </ul>
+{{else}}
+{{#contentFor "lang"}}fi{{/contentFor}}
+{{#contentFor "lang"}}sv{{/contentFor}}
+<ul class="nav">
+    <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a href="./rsvp">RSVP</a></li>
+</ul>
+{{/is}}
