@@ -451,6 +451,7 @@ body {
 .gh-head-logo.no-image {
   -webkit-text-fill-color: transparent;
   background: var(--gradient-gold);
+  background-clip: text;
   -webkit-background-clip: text;
   font-family: Annabelle;
   font-size: 28px;
@@ -494,6 +495,9 @@ body {
   display: inline-block;
   line-height: 1.7;
   color: inherit;
+  font-size: 24px;
+  font-family: var(--font-serif);
+  text-decoration: underline;
 }
 
 .gh-head-menu .nav a:hover {
@@ -1281,6 +1285,7 @@ html.no-infinite-scroll .pagination {
   font-weight: 800;
   line-height: 1.05;
   color: var(--color-darkgrey);
+  font-family: var(--font-serif);
 }
 
 .has-serif-title .article-title {
@@ -2559,8 +2564,10 @@ html.dark-mode .footer-cta-title {
 /* Custom styles */
 #tiiatom-home .site-title {
   background: var(--gradient-gold);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.22;
 }
 
 #tiiatom-home .cover-image {

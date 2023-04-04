@@ -4,6 +4,14 @@ collections:
   /:
     permalink: /{slug}/
     template: index
+  /fi/:
+    permalink: /fi/{slug}/
+    template: index-fi
+    filter: "tag:hash-fi"
+  /sv/:
+    permalink: /sv/{slug}/
+    template: index-sv
+    filter: "tag:hash-sv"
 
 taxonomies:
   tag: /tag/{slug}/
