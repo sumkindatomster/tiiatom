@@ -113,15 +113,7 @@
           "Modern sans-serif",
           "Elegant serif"
         ],
-        "default": "Elegant serif"
-      },
-      "finnish_landing_page": {
-        "type": "text",
-        "default": ""
-      },
-      "swedish_landing_page": {
-        "type": "text",
-        "default": ""
+        "default": "Modern sans-serif"
       },
       "show_publication_cover": {
         "type": "boolean",
