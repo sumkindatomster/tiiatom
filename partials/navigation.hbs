@@ -8,7 +8,7 @@
   </ul>
 {{else}}
   <ul class="nav">
-    {{#get "posts" filter=(concat "tag:hash-" (block "lang"))}}
+    {{#get "posts" filter=(concat "tag:hash-" (block "lang")) order="tags asc"}}
       {{#foreach posts}}
         <li class="{{link_class for=(url) class=(concat "nav-" slug)}}"><a
             href="{{url}}"

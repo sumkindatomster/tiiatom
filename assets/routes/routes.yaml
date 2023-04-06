@@ -1,17 +1,17 @@
 routes:
 
 collections:
-  /:
-    permalink: /{slug}/
-    template: index
   /fi/:
     permalink: /fi/{slug}/
-    template: index-fi
+    template: index
     filter: "tag:hash-fi"
   /sv/:
     permalink: /sv/{slug}/
-    template: index-sv
+    template: index
     filter: "tag:hash-sv"
+  /:
+    permalink: /{slug}/
+    template: index
 
 taxonomies:
   tag: /tag/{slug}/
