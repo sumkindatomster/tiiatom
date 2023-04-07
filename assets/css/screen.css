@@ -1432,7 +1432,7 @@ is the very first element in the post content */
 .gh-content > p {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.6em;
 }
 
@@ -2566,6 +2566,20 @@ html.dark-mode .footer-cta-title {
 }
 
 /* Custom styles */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+}
+
+p.ingress {
+  font-size: 2rem;
+}
+
 #tiiatom-home .site-title {
   background: var(--gradient-gold);
   background-clip: text;
