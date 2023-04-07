@@ -1411,7 +1411,7 @@ is the very first element in the post content */
 .gh-content > hr,
 .gh-content > blockquote {
   position: relative;
-  margin-top: max(4.8vmin, 32px);
+  margin-top: max(2.2vmin, 20px);
 }
 .gh-content > hr + *,
 .gh-content > blockquote + * {
